@@ -23,6 +23,10 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Team", // Reference to the Team model
   },
+  collegeName: {
+    type: String,
+    required: true,
+  },
 });
 
 const User = mongoose.model("User", UserSchema);

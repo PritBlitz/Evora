@@ -1,53 +1,50 @@
-// server.js
+require("dotenv").config(); // Load environment variables
 const express = require("express");
 const mongoose = require("mongoose");
 const User = require("./backend/models/User");
 const Team = require("./backend/models/Team");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // MongoDB connection
-const mongoURI =
-  "mongodb+srv://pritish9801edu:BBTza4vFn2UOSEeI@cluster0.frplq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const mongoURI = process.env.MONGO_URI;
+const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("MongoDB Atlas Connected!"))
-  .catch((err) => console.log("MongoDB Connection Error:", err));
+  .connect(mongoURI)
+  .then(() => console.log("✅ MongoDB Atlas Connected!"))
+  .catch((err) => console.log("❌ MongoDB Connection Error:", err));
 
 // POST Route for creating a new user and assigning them to a team
 app.post("/api/users", async (req, res) => {
   try {
-    const { name, email, age, password, teamName } = req.body;
+    const { name, email, age, password, teamName, collegeName } = req.body;
 
-    // Check if the team exists, or create a new team
     let team = await Team.findOne({ teamName });
 
     if (!team) {
-      // Create a new team if it doesn't exist
       team = new Team({
         teamName,
-        members: [], // Initially no members
+        collegeName, // ✅ Save College Name in the Team
+        members: [],
       });
       await team.save();
     }
 
-    // Create the user and assign them to the team
     const user = new User({
       name,
       email,
       age,
       password,
-      team: team._id, // Assign user to the team
+      team: team._id,
+      collegeName, // ✅ Store College Name in User
     });
 
     await user.save();
 
-    // Add user to the team's members list
     team.members.push(user._id);
     await team.save();
 
@@ -68,13 +65,35 @@ app.get("/api/teams/:teamName", async (req, res) => {
     );
 
     if (!team) {
-      return res.status(404).json({ error: "Team not found" });
+      return res.status(404).json({ error: "❌ Team not found" });
     }
 
     res.status(200).json({ team });
+  } catch (error) {
+    console.error("❌ Error fetching team:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+app.get("/api/teams/college/:collegeName", async (req, res) => {
+  try {
+    const { collegeName } = req.params;
+
+    // Find all teams that belong to the given college
+    const teams = await Team.find({ collegeName }).populate(
+      "members",
+      "name email age"
+    );
+
+    if (!teams.length) {
+      return res.status(404).json({ error: "No teams found for this college" });
+    }
+
+    res.status(200).json({ teams });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+// Start the server
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

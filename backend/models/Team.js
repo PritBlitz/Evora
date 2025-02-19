@@ -13,6 +13,10 @@ const TeamSchema = new mongoose.Schema({
       ref: "User", // Reference to the User model
     },
   ],
+  collegeName: {
+    type: String,
+    required: true,
+  },
 });
 
 const Team = mongoose.model("Team", TeamSchema);
