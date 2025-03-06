@@ -75,7 +75,6 @@ User profile includes:
 - **Team Registration API:** [Evora Users API](https://evora-production.up.railway.app/api/users)
 
 ## 🖼️ Images Section
-_Insert screenshots or relevant images here._
 
 ![Image 1](images/image1.jpg)
 ![Image 2](images/image2.png) <span />
@@ -98,7 +97,6 @@ _Insert screenshots or relevant images here._
 4. Real-time event notifications 📢
 5. Automatic certificate generation 🖨️
 
----
 
 ### 🤝 Contributions
 We welcome contributions! Submit a pull request to improve the project.
