@@ -77,7 +77,7 @@ User profile includes:
 ## 🖼️ Images Section
 _Insert screenshots or relevant images here._
 
-![Image 1](images/image1.png)
+![Image 1](images/image1.jpg)
 ![Image 2](images/image2.png)
 ![Image 2](images/image3.png)
 ![Image 2](images/image4.png)
