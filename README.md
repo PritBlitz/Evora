@@ -78,17 +78,17 @@ User profile includes:
 _Insert screenshots or relevant images here._
 
 ![Image 1](images/image1.jpg)
-![Image 2](images/image2.png)
-![Image 2](images/image3.png)
-![Image 2](images/image4.png)
-![Image 2](images/image5.png)
-![Image 2](images/image6.png)
-![Image 2](images/image7.png)
-![Image 2](images/image8.png)
-![Image 2](images/image9.png)
-![Image 2](images/image10.png)
-![Image 2](images/image11.png)
-![Image 2](images/image12.png)
+![Image 2](images/image2.png) <span />
+![Image 2](images/image3.png) <span />
+![Image 2](images/image4.png) <span />
+![Image 2](images/image5.png) <span />
+![Image 2](images/image6.png) <span />
+![Image 2](images/image7.png) <span />
+![Image 2](images/image8.png) <span />
+![Image 2](images/image9.png) <span />
+![Image 2](images/image10.png) <span />
+![Image 2](images/image11.png) <span />
+![Image 2](images/image12.png) <span />
 
 
 ## ⚙️ How It Works
