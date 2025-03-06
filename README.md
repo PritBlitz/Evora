@@ -4,7 +4,8 @@
 Evora is a powerful and intuitive application designed to streamline event management, team coordination, and certificate generation, making the process seamless and efficient.
 
 ## 📥 Download & Screenshots
-[📎 Download APK & View Screenshots](https://drive.google.com/drive/folders/1429qDuWnM35vW1WYXcEjmCug_uV7IwYW)
+Download the our latest project fully deployed and functional on your Android or IOS phones .
+[📎 Download APK ](https://drive.google.com/drive/folders/1429qDuWnM35vW1WYXcEjmCug_uV7IwYW)
 
 ## 🎯 Features
 ### 🔍 Explore Events
@@ -76,8 +77,19 @@ User profile includes:
 ## 🖼️ Images Section
 _Insert screenshots or relevant images here._
 
-![Image 1](path/to/image1.png)
-![Image 2](path/to/image2.png)
+![Image 1](images/image1.png)
+![Image 2](images/image2.png)
+![Image 2](images/image3.png)
+![Image 2](images/image4.png)
+![Image 2](images/image5.png)
+![Image 2](images/image6.png)
+![Image 2](images/image7.png)
+![Image 2](images/image8.png)
+![Image 2](images/image9.png)
+![Image 2](images/image10.png)
+![Image 2](images/image11.png)
+![Image 2](images/image12.png)
+
 
 ## ⚙️ How It Works
 1. Fetch event data via API 🔄
