@@ -74,7 +74,7 @@ Participants register by providing:
 ## Images Section
 _You can insert screenshots or relevant images here._
 
-![Image 1](path/to/image1.png)
+![Image 1](images/image5.png)
 ![Image 2](path/to/image2.png)
 
 ## How It Works
